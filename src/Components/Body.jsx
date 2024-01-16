@@ -4,11 +4,8 @@ import grid1 from "../Assets/grid-1.png";
 import grid2 from "../Assets/grid-2.png";
 import grid3 from "../Assets/grid-3.png";
 import brochureBg from "../Assets/downloadBrochureBg.jpg";
-import whyChooseImage from "../Assets/whychooseusImage.jpg";
 import ieltsImg from "../Assets/aboutIELTSImg.jpg";
-import journeyBg from "../Assets/journeyBg.jpg";
 import demoClasses from "../Assets/demoClassesImg.jpg";
-import redTick from "../Assets/check-mark-svgrepo-com.svg";
 import festiveImg from "../Assets/festiveSeasonImg.jpg";
 import slider1 from "../Assets/sliderImg1.jpg";
 import slider2 from "../Assets/sliderImg2.jpg";
@@ -17,13 +14,6 @@ import { AuthContext } from "../Context/AuthContextProvider";
 import DHHBrochure from "../Assets/DHHBrochure.pdf";
 import contactImg from "../Assets/contactImg.jpg";
 let Body = () => {
-  let [showAnswer1, setShowAnswer1] = useState(false);
-  let [showAnswer2, setShowAnswer2] = useState(false);
-  let [showAnswer3, setShowAnswer3] = useState(false);
-  let [showAnswer4, setShowAnswer4] = useState(false);
-  let [showAnswer5, setShowAnswer5] = useState(false);
-  let [showAnswer6, setShowAnswer6] = useState(false);
-  let [showAnswer7, setShowAnswer7] = useState(false);
   let [sliderImage, setSliderImage] = useState(slider1);
   let [imageChanged, setImageChanged] = useState(false);
   let { showForm, setShowForm, showForm2, setShowForm2 } =
@@ -51,24 +41,6 @@ let Body = () => {
   let [phoneNumber4, setPhoneNumber4] = useState("");
   let [showSuccess4, setShowSuccess4] = useState(false);
   let [showError4, setShowError4] = useState(false);
-  // useEffect(() => {
-  //   if (sliderImage == slider1) {
-  //     setTimeout(() => {
-  //       setSliderImage(slider2);
-  //       setImageChanged(true);
-  //     }, 5000);
-  //   } else {
-  //     setTimeout(() => {
-  //       setSliderImage(slider1);
-  //       setImageChanged(true);
-  //     }, 5000);
-  //   }
-  //   if (imageChanged) {
-  //     setTimeout(() => {
-  //       setImageChanged(false);
-  //     }, 4000);
-  //   }
-  // }, [sliderImage, imageChanged]);
 
   useEffect(() => {
     let intervalId = setInterval(() => {
@@ -91,7 +63,7 @@ let Body = () => {
     if (!name.trim() || !email.trim() || !phoneNumber.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://dhh-lp-default-rtdb.firebaseio.com/ielts/data.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -100,6 +72,8 @@ let Body = () => {
         name: name,
         email: email,
         phoneNumber: phoneNumber,
+        date: new Date().toDateString(),
+        time_HH_MM_SS: new Date().toLocaleTimeString(),
       }),
     })
       .then((res) => {
@@ -118,7 +92,7 @@ let Body = () => {
     if (!name2.trim() || !email2.trim() || !phoneNumber2.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://dhh-lp-default-rtdb.firebaseio.com/ielts/data.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -127,6 +101,8 @@ let Body = () => {
         name: name2,
         email: email2,
         phoneNumber: phoneNumber2,
+        date: new Date().toDateString(),
+        time_HH_MM_SS: new Date().toLocaleTimeString(),
       }),
     })
       .then((res) => {
@@ -144,7 +120,7 @@ let Body = () => {
     if (!name3.trim() || !phoneNumber3.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://dhh-lp-default-rtdb.firebaseio.com/ielts/data.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -153,6 +129,8 @@ let Body = () => {
         name: name3,
         email: email3,
         phoneNumber: phoneNumber3,
+        date: new Date().toDateString(),
+        time_HH_MM_SS: new Date().toLocaleTimeString(),
       }),
     })
       .then((res) => {
@@ -171,7 +149,7 @@ let Body = () => {
     if (!name4.trim() || !phoneNumber4.trim()) {
       return;
     }
-    fetch("https://rento-mojo-default-rtdb.firebaseio.com/cart.json", {
+    fetch("https://dhh-lp-default-rtdb.firebaseio.com/ielts/data.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -180,6 +158,8 @@ let Body = () => {
         name: name4,
         email: email4,
         phoneNumber: phoneNumber4,
+        date: new Date().toDateString(),
+        time_HH_MM_SS: new Date().toLocaleTimeString(),
       }),
     })
       .then((res) => {
@@ -395,6 +375,12 @@ let Body = () => {
                 textDecoration: "none",
                 textAlign: "center",
                 cursor: "pointer",
+              }}
+              onClick={() => {
+                setTimeout(() => {
+                  setFormSubmitted3(false);
+                  setShowSuccess3(true);
+                }, 2000);
               }}
             >
               Download Now
@@ -720,7 +706,15 @@ let Body = () => {
           <p>
             Address: SCO: 85-86, 2nd Floor Sector 34-A Chandigarh 160022 India
           </p>
-          <button onClick={() => setShowForm2(true)}>Contact Now</button>
+          <button>
+            <a
+              href="tel:9780754465"
+              target="_blank"
+              style={{ textDecoration: "none", color: "#db2131" }}
+            >
+              Contact Now
+            </a>
+          </button>
         </div>
       </div>
     </div>
