@@ -1,0 +1,115 @@
+.hamburger {
+  width: 100%;
+  position: absolute;
+  z-index: 80;
+  background-color: white;
+  color: black;
+  top: 125px;
+  left: 0;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s visibility ease, 1s opacity ease;
+}
+
+.showHamburger {
+  visibility: hidden;
+  opacity: 0;
+  animation: 0.27s showHamburger ease-in-out;
+  animation-fill-mode: forwards;
+  height: 0px;
+}
+
+@keyframes showHamburger {
+  from {
+    visibility: hidden;
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    height: 145px;
+    opacity: 1;
+  }
+}
+
+.containerHamburger {
+  width: 1140px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.containerHamburger a {
+  display: block;
+  font-family: "Alegreya Sans", sans-serif;
+  word-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: transparent;
+  animation: 1s showLinks ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showLinks {
+  from {
+    color: transparent;
+  }
+  to {
+    color: black;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .hamburger {
+    display: block;
+  }
+
+  .containerHamburger {
+    width: 780px;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .containerHamburger {
+    width: 680px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .containerHamburger {
+    width: 530px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .containerHamburger {
+    width: 430px;
+  }
+
+  .hamburger {
+    top: 70px;
+  }
+}
+
+@media all and (max-width: 470px) {
+  .hamburger {
+    top: 60px;
+  }
+
+  .containerHamburger {
+    width: 330px;
+    padding-bottom: 0;
+  }
+}
+
+@media all and (max-width: 380px) {
+  .containerHamburger {
+    width: 285px;
+    padding-bottom: 0;
+  }
+
+  .hamburger {
+    top: 55px;
+  }
+}

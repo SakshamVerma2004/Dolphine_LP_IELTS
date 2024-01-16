@@ -1,0 +1,39 @@
+.stickyTopBar {
+  background-color: #f92537;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  font-family: "EB Garamond", serif;
+}
+
+.stickyTopBar p {
+  color: white;
+}
+
+.stickyTopBar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.stickyTopBar div img {
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+@media all and (max-width: 767px) {
+  .stickyTopBar {
+    display: none;
+  }
+}

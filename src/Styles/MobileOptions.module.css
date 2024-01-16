@@ -1,0 +1,88 @@
+.mobileOptions {
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 50;
+  position: fixed;
+  top: 85%;
+  left: 0;
+  display: none;
+}
+
+.containerMobileOptions {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerMobileOptions button {
+  background-color: #db2131;
+  color: white;
+  font-family: "EB Garamond", Sans-serif;
+  font-size: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 50px;
+  border: none;
+  border-radius: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.containerMobileOptions a {
+  width: 50px;
+  height: 50px;
+  background-color: #db2131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.containerMobileOptions a img {
+  filter: invert(1);
+}
+
+@media all and (max-width: 767px) {
+  .mobileOptions {
+    display: flex;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .containerMobileOptions button {
+    background-color: #db2131;
+    color: white;
+    font-family: "EB Garamond", Sans-serif;
+    font-size: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .containerMobileOptions button {
+    background-color: #db2131;
+    color: white;
+    font-family: "EB Garamond", Sans-serif;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+}
